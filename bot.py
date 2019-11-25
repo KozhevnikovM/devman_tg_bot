@@ -1,6 +1,12 @@
 from telegram import Bot
-from config import TG_BOT_API_KEY
+from config import TELEGRAM_BOT_API_KEY
 
-def tg_send_message(text):
-    bot = Bot(token=TG_BOT_API_KEY)
-    bot.send_message(chat_id=312873002, text=text)
+
+def send_telegram_message(chat_id, text):
+    bot = Bot(token=TELEGRAM_BOT_API_KEY)
+    bot.send_message(chat_id=chat_id, text=text)
+
+
+if __name__ == '__main__':
+    from config import TELEGRAM_CHAT_ID
+    send_telegram_message('test', TELEGRAM_CHAT_ID)
